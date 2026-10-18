@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Send asset and media requests straight to their files, then let React Router
+# handle storefront paths such as /collection and /admin/login.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^ index.html [L]

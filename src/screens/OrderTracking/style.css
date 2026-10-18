@@ -1,0 +1,14 @@
+.order-track-page { min-height:100vh; background:#f7f6f2; color:#242927; }
+.order-track-content { width:min(100% - 40px, 680px); min-height:calc(100vh - 180px); margin:70px auto; }
+.order-track-content > .eyebrow { color:#69726c; font-size:10px; letter-spacing:.18em; }
+.order-track-content h1 { margin:12px 0; font-size:clamp(34px,5vw,54px); font-weight:500; }
+.order-track-content > p { color:#656c68; line-height:1.7; }
+.order-track-form { max-width:470px; margin-top:30px; }
+.order-track-form .checkout-primary { width:max-content; }
+.order-track-result { margin-top:32px; padding:24px; border:1px solid #d7d9d4; }
+.order-track-result .eyebrow { color:#69726c; font-size:10px; letter-spacing:.14em; }
+.order-track-result h2 { margin:8px 0; text-transform:capitalize; font-size:22px; font-weight:500; }
+.order-track-result li { margin:8px 0; }
+.order-track-account { margin-top:30px; }
+.order-track-account a { color:inherit; }
+@media(max-width:620px) { .order-track-content { margin:42px auto; } }

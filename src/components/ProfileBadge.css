@@ -1,0 +1,58 @@
+.profile-orb {
+    position:relative;
+    isolation:isolate;
+    display:grid;
+    width:27px;
+    height:27px;
+    flex:0 0 27px;
+    overflow:hidden;
+    place-items:center;
+    border-radius:50%;
+    color:#111 !important;
+    background:radial-gradient(circle at 37% 34%,#fff 0 12%,#effcff 31%,#c9f3ffb8 53%,#d7c9f388 76%,#fff 100%);
+    box-shadow:0 0 6px #88dcff9c,inset 0 0 7px #fff;
+    font:700 8px/1 'Montserrat',sans-serif;
+    letter-spacing:.045em;
+    text-shadow:none !important;
+    view-transition-name:saltlyne-profile-badge;
+}
+.profile-orb::before,.profile-orb::after {
+    position:absolute;
+    z-index:-1;
+    inset:-25%;
+    border-radius:50%;
+    content:"";
+    pointer-events:none;
+}
+.profile-orb::before {
+    background:conic-gradient(from 0deg,transparent 0 14%,#7cecffbd 26%,#b9a3ffbd 42%,#ffcfefad 57%,#ffedb9 70%,#77eaffc9 86%,transparent);
+    filter:blur(3px);
+    opacity:.85;
+    animation:account-orb-swirl 8s linear infinite;
+}
+.profile-orb::after {
+    inset:0;
+    background:radial-gradient(ellipse at 24% 16%,#fff9,transparent 46%),radial-gradient(ellipse at 74% 87%,#b8e8ff61,transparent 54%);
+    opacity:.85;
+    animation:account-orb-gloss 4.8s ease-in-out infinite alternate;
+}
+html.is-art-mode .profile-orb,
+.saltlyne-store.is-art-mode .profile-orb {
+    color:#fff !important;
+    background:radial-gradient(circle at 37% 33%,#192c80 0,#101449 48%,#25085f 77%,#080a22 100%);
+    box-shadow:0 0 7px #6655ffb5,inset 0 0 8px #163bffc4;
+}
+html.is-art-mode .profile-orb::before,
+.saltlyne-store.is-art-mode .profile-orb::before {
+    background:conic-gradient(from 0deg,transparent 0 11%,#09d8ff 23%,#3155ff 39%,#9b25ff 55%,#f32dce 69%,#164dff 84%,transparent);
+    opacity:.92;
+}
+html.is-art-mode .profile-orb::after,
+.saltlyne-store.is-art-mode .profile-orb::after {
+    background:radial-gradient(ellipse at 23% 14%,#d2ffff82,transparent 40%),radial-gradient(ellipse at 76% 84%,#d72cff75,transparent 54%);
+}
+@keyframes account-orb-swirl { to { transform:rotate(360deg); } }
+@keyframes account-orb-gloss { from { opacity:.48; transform:translate(-3%,2%) scale(.96); } to { opacity:.96; transform:translate(3%,-2%) scale(1.04); } }
+@media(prefers-reduced-motion:reduce) {
+    .profile-orb::before,.profile-orb::after { animation:none; }
+}

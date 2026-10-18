@@ -1,0 +1,2 @@
+ALTER TABLE customers
+    ADD COLUMN IF NOT EXISTS last_login_at TIMESTAMPTZ;
