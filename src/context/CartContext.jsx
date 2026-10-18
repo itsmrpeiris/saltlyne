@@ -48,8 +48,12 @@ export function CartProvider({ children }) {
         let active = true;
         api("/exchange-rates").then((result) => {
             if (!active) return;
+            if (!result || typeof result.rates !== "object" || result.rates === null) {
+                setExchangeRateError("Exchange rates are unavailable.");
+                return;
+            }
             setExchangeRates(result.rates);
-            setExchangeRateUpdatedAt(result.updatedAt);
+            setExchangeRateUpdatedAt(result.updatedAt || "");
             setExchangeRatesStale(Boolean(result.stale));
         }).catch((error) => {
             if (active) setExchangeRateError(error.message);
