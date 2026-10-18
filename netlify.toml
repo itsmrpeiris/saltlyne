@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # The admin email is a public login identifier and a code default; keep scanning ADMIN_PASSWORD.
+  SECRETS_SCAN_OMIT_KEYS = "ADMIN_EMAIL"
 
 [[redirects]]
   from = "/api/*"
